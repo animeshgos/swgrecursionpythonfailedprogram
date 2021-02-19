@@ -8,28 +8,33 @@ def comp():
     else:
         return 'g'
 def result(comp,add):
-    print(comp)
-    if comp=='g':
-        if add=='w':
-            return True
-        elif add=='s':
-            return False
-        else:
-            return (result(comp(),add))
-    elif comp=='w':
-        if add=='g':
-            return False
-        elif add=='s':
-            return True
-        else:
-            return (result(comp(),add))
-    elif comp=='s':
-        if add=='g':
-            return False
-        elif add=='w':
-            return True
-        else:
-            return (result(comp(),add))
-
+    if add=='s' or add=='w' or add=='g':
+        print(f"computer choosed --> {comp}")
+        if comp=='g':
+            if add=='w':
+                return True
+            elif add=='s':
+                return False
+            elif add=='g':
+                return (result(comp(),add))
+        elif comp=='w':
+            if add=='g':
+                return False
+            elif add=='s':
+                return True
+            elif add=='w':
+                return (result(comp(),add))
+        elif comp=='s':
+            if add=='g':
+                return True
+            elif add=='w':
+                return False
+            elif add=='s':
+                return (result(comp(),add))
+    else:
+        print("invalid input ")
 you=input("enter snake('s') water('w') gun('g') : ")
-print(result(comp(),you))
+if (result(comp(),you))==True:
+    print("you won")
+else:
+    print("you loose")
