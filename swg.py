@@ -9,7 +9,7 @@ def comp():
         return 'g'
 def result(comp,add):
     if add=='s' or add=='w' or add=='g':
-        print(f"computer choosed --> {comp}")
+        print(f"computer chose --> {comp}")
         if comp=='g':
             if add=='w':
                 return True
@@ -37,4 +37,4 @@ you=input("enter snake('s') water('w') gun('g') : ")
 if (result(comp(),you))==True:
     print("you won")
 else:
-    print("you loose")
+    print("you lose")
